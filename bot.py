@@ -3509,9 +3509,10 @@ def main() -> None:
 
     print("✅ Netflix Cookie Checker Bot is running…")
     app.run_polling(
-        drop_pending_updates=True,
-        allowed_updates=["message", "callback_query"],
-    )
+    drop_pending_updates=True,
+    allowed_updates=["message", "callback_query"],
+    close_loop=False,
+)
 
 
 if __name__ == "__main__":
