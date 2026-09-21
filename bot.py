@@ -3510,12 +3510,6 @@ def main() -> None:
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 
-    app.run_polling(
-    drop_pending_updates=True,
-    allowed_updates=["message", "callback_query"],
-    close_loop=False,
-)
-
 
 if __name__ == "__main__":
     main()
