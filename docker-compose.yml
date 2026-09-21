@@ -1,0 +1,15 @@
+# One-command deploy:
+#   TELEGRAM_BOT_TOKEN=123:abc docker compose up -d
+services:
+  nf-checker:
+    image: ghcr.io/raistar44xyz-tech/netflix-cookie-checker:latest
+    container_name: nf-checker
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:?set TELEGRAM_BOT_TOKEN env var}
+      # Optional:
+      # - ADMIN_ID=123456789
+      # - MONGODB_URL=mongodb+srv://...
+      # - BULK_CONCURRENCY=16
+    ports:
+      - "5000:5000"
