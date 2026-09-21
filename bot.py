@@ -2,6 +2,7 @@
 """Netflix Cookie Checker — Telegram Bot"""
 
 import os
+import asyncio
 import io
 import time
 import random
@@ -3506,6 +3507,10 @@ def main() -> None:
         ])
 
     app.post_init = _post_init
+
+    
+asyncio.set_event_loop(asyncio.new_event_loop())
+
 
     print("✅ Netflix Cookie Checker Bot is running…")
     app.run_polling(
