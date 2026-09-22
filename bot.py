@@ -3510,8 +3510,7 @@ def main() -> None:
 
 def main() -> None:
     ...
-    app = (
-        Application.builder()
+    app = (Application.builder()
         ...
         .build()
     )
@@ -3525,8 +3524,6 @@ def main() -> None:
         allowed_updates=["message", "callback_query"],
     )
 
-if __name__ == "__main__":
-    main()
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 
