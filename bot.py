@@ -3508,14 +3508,27 @@ def main() -> None:
 
     app.post_init = _post_init
 
-print("✅ Netflix Cookie Checker Bot is running…")
-app.run_polling(
-    drop_pending_updates=True,
-    allowed_updates=["message", "callback_query"],
-)
+def main() -> None:
+    ...
+    app = (
+        Application.builder()
+        ...
+        .build()
+    )
+
+    ...
+    app.post_init = _post_init
+
+    print("✅ Netflix Cookie Checker Bot is running…")
+    app.run_polling(
+        drop_pending_updates=True,
+        allowed_updates=["message", "callback_query"],
+    )
+
+if __name__ == "__main__":
+    main()
 
 asyncio.set_event_loop(asyncio.new_event_loop())
-
 
 if __name__ == "__main__":
     main()
