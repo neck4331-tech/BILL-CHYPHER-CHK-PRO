@@ -3508,6 +3508,11 @@ def main() -> None:
 
     app.post_init = _post_init
 
+print("🤖 Bot de Telegram iniciado")
+app.run_polling(
+    drop_pending_updates=True,
+    allowed_updates=["message", "callback_query"],
+)
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 
