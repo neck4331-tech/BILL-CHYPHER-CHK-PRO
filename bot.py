@@ -3509,16 +3509,11 @@ def main() -> None:
     app.post_init = _post_init
 
 def main() -> None:
-    ...
-    app = (Application.builder()
-        ...
-        .build()
-    )
+    # aquí queda TODO tu código original de creación/configuración de app
 
-    ...
     app.post_init = _post_init
 
-    print("✅ Netflix Cookie Checker Bot is running…")
+    print("Bot is running…")
     app.run_polling(
         drop_pending_updates=True,
         allowed_updates=["message", "callback_query"],
