@@ -2,7 +2,6 @@
 """Netflix Cookie Checker — Telegram Bot"""
 
 import os
-import asyncio
 import io
 import time
 import random
@@ -3438,14 +3437,6 @@ def main() -> None:
     if not BOT_TOKEN:
         raise ValueError("TELEGRAM_BOT_TOKEN is not set.")
 
-        app.post_init = _post_init
-
-    print("🤖 Bot de Telegram iniciado")
-    app.run_polling(
-        drop_pending_updates=True,
-        allowed_updates=["message", "callback_query"],
-    )
-
     start_dashboard(port=5000)
     print("✅ Status dashboard running on port 5000")
 
@@ -3514,7 +3505,14 @@ def main() -> None:
             BotCommand("cancel",   "Cancel any active flow (e.g. /changepw)"),
         ])
 
-asyncio.set_event_loop(asyncio.new_event_loop())
+    app.post_init = _post_init
+
+    print("✅ Netflix Cookie Checker Bot is running…")
+    app.run_polling(
+        drop_pending_updates=True,
+        allowed_updates=["message", "callback_query"],
+    )
+
 
 if __name__ == "__main__":
     main()
